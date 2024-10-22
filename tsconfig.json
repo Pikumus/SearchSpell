@@ -1,7 +1,7 @@
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "types": ["@nuxt/types","node"], // Добавьте 'node' сюда
+    "types": ["@nuxt/types", "node"], // Добавьте 'node' сюда
     "module": "esnext",
     "target": "es2017",
     "baseUrl": ".",
@@ -11,15 +11,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.d.ts",
-    "**/*.tsx",
-    "**/*.vue"
-  ],
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
-  ]
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.tsx", "**/*.vue"],
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }
