@@ -13,8 +13,10 @@ export const useItemStore = defineStore("homeStore", () => {
     try {
       const responses: Spells[] = await catalogRepo.getSpells();
       spells.value = responses;
+      return responses;
     } catch (error) {
       console.error("Error fetching items:", error);
+      throw error;
     }
   };
   const filteredItems = computed(() => {
