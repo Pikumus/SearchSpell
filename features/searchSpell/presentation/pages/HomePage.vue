@@ -15,17 +15,19 @@ onMounted(async () => {
 </script>
 
 <template>
-  <header class="page-header flex justify-center items-center flex-col">
-    <h1>Список заклинаний</h1>
+  <div class="container bg-gray-300 min-w-full h-screen overflow-auto">
+  <header class=" page-header flex justify-center items-center flex-col">
+    <h1 class="text-3xl font-light">Список заклинаний</h1>
     <search-bar />
   </header>
-  <main class="page-main">
-    <div class="container">
+  <main class="mt-1">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
       <div v-for="spell in filter" :key="spell.id">
-        <card-spell :name="spell.name" :type="spell.type" />
+        <card-spell :name="spell.name" :type="spell.type" :light="spell.light"/>
       </div>
     </div>
   </main>
+  </div>
 </template>
 
 <style scoped></style>

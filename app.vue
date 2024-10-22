@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <home-page />
+  <div class="min-w-full">
+    <home-page></home-page>
   </div>
 </template>
 <script setup lang="ts">
