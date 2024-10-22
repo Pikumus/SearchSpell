@@ -1,13 +1,12 @@
-<template>
-  <div>
-    Hello world
-  </div>
-</template>
-
 <script setup lang="ts">
-
+import SearchBar from "~/features/searchSpell/presentation/components/SearchBar.vue";
 </script>
 
-<style scoped>
+<template>
+  <header class="page-header flex justify-center items-center flex-col">
+    <h1>Список заклинаний</h1>
+    <search-bar/>
+  </header>
+</template>
 
-</style>
+<style scoped></style>

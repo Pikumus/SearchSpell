@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-page/>
+    <home-page />
   </div>
 </template>
 <script setup lang="ts">

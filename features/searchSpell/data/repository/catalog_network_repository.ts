@@ -1,4 +1,5 @@
 import { CatalogRepository } from "../../domain/repository/catalog_repository";
+import type { Item } from "../../domain/model/item";
 import axios from "axios";
 
 export class CatalogNetworkRepository extends CatalogRepository {

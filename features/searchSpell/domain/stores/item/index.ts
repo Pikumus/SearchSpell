@@ -1,30 +1,32 @@
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
-import { di } from "../../../../../di/di";
+import type { Item } from "~/features/searchSpell/domain/model/item";
+import {CatalogNetworkRepository} from "~/features/searchSpell/data/repository/catalog_network_repository";
 
+const catalogRepo = new CatalogNetworkRepository();
 export const useItemStore = defineStore("homeStore", () => {
   // State
-  const itemAll = ref<Item[]>([]); // Начальное значение - пустой массив
+  const spells = ref<Item[]>([]); // Начальное значение - пустой массив
   const searchQuery = ref("");
 
   const fetchItemAll = async () => {
     try {
-      const charAll = await di.catalogRepository.getAllProducts();
-      itemAll.value = charAll;
+      const responses: Item[] = await catalogRepo.getAllProducts();
+      spells.value = responses;
     } catch (error) {
       console.error("Error fetching items:", error);
     }
   };
   const filteredItems = computed(() => {
-    if (!searchQuery.value) return itemAll.value;
-    return itemAll.value.filter((item) =>
+    if (!searchQuery.value) return spells.value;
+    return spells.value.filter((item) =>
       item.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
     );
   });
 
   return {
     searchQuery,
-    itemAll,
+    spells,
     fetchItemAll,
     filteredItems,
   };
