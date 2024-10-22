@@ -1,5 +1,5 @@
-import type { Item } from "~/features/searchSpell/domain/model/item";
+import type { Spells } from "~/features/searchSpell/domain/model/spells";
 
 export abstract class CatalogRepository {
-  abstract getAllProducts(): Promise<Item[]>;
+  abstract getSpells(): Promise<Spells[]>;
 }

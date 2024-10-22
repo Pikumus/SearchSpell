@@ -1,12 +1,12 @@
 import { CatalogRepository } from "../../domain/repository/catalog_repository";
-import type { Item } from "../../domain/model/item";
+import type { Spells } from "../../domain/model/spells";
 import axios from "axios";
 
 export class CatalogNetworkRepository extends CatalogRepository {
-  async getAllProducts(): Promise<Item[]> {
+  async getSpells(): Promise<Spells[]> {
     try {
-      const response = await axios.get<Item[]>(
-        "http://89.110.125.61:3000/api/products",
+      const response = await axios.get<Spells[]>(
+        "https://wizard-world-api.herokuapp.com/Spells",
       );
 
       return response.data;
