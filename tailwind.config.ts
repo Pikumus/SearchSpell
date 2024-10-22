@@ -4,7 +4,7 @@ module.exports = {
     "./features/**/*.{js,vue,ts}",
     "./features/*/components/**/*.{js,vue,ts}",
     "./features/*/layouts/**/*.vue",
-    "./features/*/pages/**/*.vue",
+    "./pages/**/*.vue",
     "./features/*/plugins/**/*.{js,ts}",
     "./features/*/app.vue",
     "./features/*/error.vue",

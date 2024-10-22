@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import SearchBar from "~/features/searchSpell/presentation/components/SearchBar.vue";
-import {useItemStore} from "~/features/searchSpell/domain/stores/item";
-import CardSpell from "~/features/searchSpell/presentation/components/CardSpell.vue";
+import { computed } from "vue"
+import { useAsyncData } from 'nuxt/app';
+import {useItemStore} from "@/features/searchSpell/domain/stores/item";
+import CardSpell from "@/features/searchSpell/presentation/components/CardSpell.vue";
+import SearchBar from "@/features/searchSpell/presentation/components/SearchBar.vue";
 
 const store = useItemStore();
 const filter = computed(() => store.filteredItems);
 
 const {data: spells, error} = await useAsyncData('fetchSpells', () => store.fetchSpells());
-
+// const goToDetail = (id: string) => {
+//   console.log(`Перейти на страницу заклинания с ID: ${id}`);
+// };
 </script>
 
 <template>
@@ -18,11 +22,11 @@ const {data: spells, error} = await useAsyncData('fetchSpells', () => store.fetc
     </header>
     <main class="mt-1">
       <div v-if="error" class="text-red-500">Ошибка при загрузке заклинаний.</div>
-      <div v-else-if="!spells || spells.length === 0">Загружается...>Загружается...</div>
+      <div v-else-if="!spells || spells.length === 0">Загружается...</div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-        <div v-for="spell in filter" :key="spell.id">
+        <NuxtLink v-for="spell in filter" :key="spell.id" :to="`/spell/${spell.id}`">
           <card-spell :name="spell.name" :type="spell.type" :light="spell.light"/>
-        </div>
+        </NuxtLink>
       </div>
     </main>
   </div>
