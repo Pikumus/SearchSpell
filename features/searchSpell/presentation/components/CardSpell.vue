@@ -19,7 +19,7 @@ defineProps<{
   <div
       class="card bg-white shadow-md rounded-lg p-6 max-w-sm mx-auto"
   >
-    <h2 class="text-xl font-bold mb-2">Название: {{ name }}</h2>
+    <h2 class="text-lg font-bold mb-2">Название: {{ name }}</h2>
     <p class="text-gray-700">Тип: {{ type }}</p>
     <p
         v-if="light === 'Transparent'"

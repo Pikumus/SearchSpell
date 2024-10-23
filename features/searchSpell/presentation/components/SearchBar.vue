@@ -21,7 +21,7 @@ const searchSpells = () => {
       class="relative flex justify-between items-center w-1/2 h-10 mt-1 rounded-3xl bg-gray-200 overflow-hidden"
     >
       <input
-        class="peer h-full w-3/4 bg-gray-200 text-lg text-black placeholder-gray-500 outline-none pl-10 rounded-3xl"
+        class="peer h-full w-full bg-gray-200 text-lg text-black placeholder-gray-500 outline-none pl-10 rounded-3xl"
         type="text"
         placeholder="Найти Заклинание"
         @input="updateSearchQuery"

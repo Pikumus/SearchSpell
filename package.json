@@ -18,8 +18,10 @@
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@pinia/nuxt": "^0.5.5",
     "axios": "^1.7.7",
+    "css": "^3.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "masonry-layout": "^4.2.2",
     "nuxt": "^3.13.2",
     "pinia": "^2.2.4",
     "typescript": "^5.6.3",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "@nuxt/types": "^2.18.1",
     "@nuxtjs/eslint-module": "^4.1.0",
+    "@types/masonry-layout": "^4.2.8",
     "@types/node": "^22.7.8",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.13.0",
