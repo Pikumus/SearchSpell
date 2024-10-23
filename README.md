@@ -54,8 +54,8 @@ https://github.com/Pikumus/SearchSpell.git
 cd SpellsApp
 npm install
 # 3 - Запуск проекта:
-npm run dev /n
-Приложение будет доступно по адресу: http://localhost:3000
+- npm run dev
+- Приложение будет доступно по адресу: http://localhost:3000
 
 ## Основные возможности
 - Поиск заклинаний — компонент SearchBar.vue позволяет искать заклинания.
