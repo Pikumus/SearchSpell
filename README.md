@@ -46,8 +46,7 @@ SpellsApp/
 ├── README.md                   # Документация проекта
 ├── tailwind.config.ts          # Конфигурация Tailwind CSS
 └── tsconfig.json               # Конфигурация TypeScript
-
-
+```
 ## Установка и запуск
 # 1 - Клонирование репозитория
 https://github.com/Pikumus/SearchSpell.git
