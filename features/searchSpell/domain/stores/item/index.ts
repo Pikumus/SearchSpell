@@ -30,11 +30,12 @@ export const useItemStore = defineStore("homeStore", () => {
     }
   };
   const filteredItems = computed(() => {
-    if (!searchQuery.value) return spells.value;
+    if (!searchQuery.value.trim()) return spells.value;
     return spells.value.filter((spell) =>
-      spell.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
+        spell.name.toLowerCase().trim().includes(searchQuery.value.toLowerCase().trim()),
     );
   });
+
 
   return {
     fetchSpellsById,
